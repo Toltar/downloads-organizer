@@ -8,3 +8,7 @@ Ever get tired of you downloads folder getting messy? Well a simple script can d
 - [ ] Enable Background Service Support for Linux
 - [ ] Have the script make folders and put the associated files within those folders
 - [ ] Find better and faster ways to implement this
+
+
+
+Any PRs are welcome
