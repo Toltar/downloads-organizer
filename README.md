@@ -8,7 +8,7 @@ Currently to run the script you just run this command:
 
 It only runs on Windows systems but I will get OSX and Linux support in the future
 
-
+![](http://i.imgur.com/kBtgIML.gif)
 # TODO
 - [ ] Enable Background Service Support for Windows
 - [ ] Enable Background Service Support for Mac
