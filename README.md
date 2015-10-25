@@ -8,6 +8,7 @@ Currently to run the script you just run this command:
 
 It only runs on Windows systems but I will get OSX and Linux support in the future
 
+###### Click on gif to see it in action!
 ![](http://i.imgur.com/kBtgIML.gif)
 # TODO
 - [ ] Enable Background Service Support for Windows
