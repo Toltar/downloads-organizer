@@ -6,15 +6,15 @@ Currently to run the script you just run this command:
 
     `python downloadsOrganizer.py`
 
-
 It only runs on Windows systems but I will get OSX and Linux support in the future
+
+
 # TODO
 - [ ] Enable Background Service Support for Windows
 - [ ] Enable Background Service Support for Mac
 - [ ] Enable Background Service Support for Linux
-- [X] Have the script make folders and put the associated files within those folders
+- [x] Have the script make folders and put the associated files within those folders
+    - [ ] Fix the bugs that it has
 - [ ] Find better and faster ways to implement this
 
-
-
-Any PRs are welcome
+Be sure to refer to the [contribution guidelines](http://github.com/Toltar/DownloadsOrganizer/CONTRIBUTING.md) if you want to contribute.
