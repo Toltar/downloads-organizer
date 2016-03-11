@@ -7,15 +7,27 @@ VCS: git
 '''
 import os
 import errno
-import shutil
-import sys
-import time
 import re
+from sys import platform as _platform
+
 FILETYPE = ['png','PNG','ppt','PPT','jpg','jpeg','JPG','gif','GIF','doc','DOC','pdf','PDF','exe','zip','ZIP','msi','MSI','txt','TXT','md']
 REGEX = '^.*\.(.*)$'
-PATH_DOWNLOADS = "c:\\Users\\"+os.getenv("USERNAME")+"\\Downloads\\"
-FILES = os.listdir(PATH_DOWNLOADS)
 
+#1 = windows
+#2 = linux
+flag = 1
+
+if (_platform == "linux" or _platform == "linux2"):
+    #linux
+    PATH_DOWNLOADS = "/home/" + os.getenv("USERNAME") + "/Downloads"
+    flag = 2
+
+elif (_platform == "win32"):
+    #Windows
+    PATH_DOWNLOADS = "c:\\Users\\"+os.getenv("USERNAME")+"\\Downloads\\"
+    flag = 1
+
+FILES = os.listdir(PATH_DOWNLOADS)
 
 #Methods
 def main():
@@ -26,8 +38,11 @@ def main():
             directory = PATH_DOWNLOADS + match.group(1)
             if not os.path.exists(directory):
                 file_path_creation(directory)
-            print ('Moving -> ' + _file_)
-            os.rename(PATH_DOWNLOADS+match.group(0),PATH_DOWNLOADS+match.group(1)+"\\"+match.group(0))
+
+            if(flag == 1):
+                os.rename(PATH_DOWNLOADS+match.group(0),PATH_DOWNLOADS+match.group(1)+"\\"+match.group(0))
+            elif(flag == 2):
+                os.rename(PATH_DOWNLOADS+match.group(0),PATH_DOWNLOADS+match.group(1)+"/"+match.group(0))
         else:
             print ('Not a file, must be a directory ->' + _file_)
     printEnv()
