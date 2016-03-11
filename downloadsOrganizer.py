@@ -16,10 +16,13 @@ REGEX = '^.*\.(.*)$'
 #1 = windows
 #2 = linux
 flag = 1
+PATH_DOWNLOADS = ""
 
 if (_platform == "linux" or _platform == "linux2"):
     #linux
-    PATH_DOWNLOADS = "/home/" + os.getenv("USERNAME") + "/Downloads"
+    print os.environ['HOME']
+    PATH_DOWNLOADS = os.environ['HOME'] + "/Downloads/"
+    #PATH_DOWNLOADS = "/home/" + os.getenv("USERNAME") + "/Downloads"
     flag = 2
 
 elif (_platform == "win32"):
@@ -42,6 +45,7 @@ def main():
             if(flag == 1):
                 os.rename(PATH_DOWNLOADS+match.group(0),PATH_DOWNLOADS+match.group(1)+"\\"+match.group(0))
             elif(flag == 2):
+                #print PATH_DOWNLOADS+match.group(1)+"/"+match.group(0)
                 os.rename(PATH_DOWNLOADS+match.group(0),PATH_DOWNLOADS+match.group(1)+"/"+match.group(0))
         else:
             print ('Not a file, must be a directory ->' + _file_)
