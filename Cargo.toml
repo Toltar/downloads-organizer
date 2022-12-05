@@ -1,0 +1,13 @@
+[package]
+name = "downloads-organizer"
+description = "A way for you to organize your downloads folder in rust"
+keywords = ["cli", "organizer"]
+categories = ["command-line-interface"]
+license = "MIT"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+dirs = "4.0.0"
